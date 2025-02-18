@@ -20,5 +20,73 @@ Code Square is a backend project that provides a platform for developers to shar
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/AhmAchJR/code-square.git
+   git clone https://github.com/AchrfJR/code-square.git
    cd code-square
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Set Up Environment Variables**:
+   Create a `.env` file in the root directory and add the following:
+   ```ini
+   PORT=3000
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret_key
+   UPLOADS_DIR=./assets/uploads
+   ```
+
+4. **Start the Server**:
+   ```bash
+   npm start
+   ```
+   The server should now be running on http://localhost:3000.
+
+## API Endpoints
+
+### User Authentication
+
+- **Register a New User**
+  - `POST /api/auth/register`: Register a new user
+
+- **User Login**
+  - `POST /api/auth/login`: User login
+
+### Articles
+
+- **Get All Articles**
+  - `GET /api/articles`: Retrieve all articles
+
+- **Create a New Article**
+  - `POST /api/articles`: Create a new article (Authenticated users only)
+
+- **Retrieve a Specific Article**
+  - `GET /api/articles/:id`: Retrieve a specific article
+
+- **Update an Article**
+  - `PUT /api/articles/:id`: Update an article (Author only)
+
+- **Delete an Article**
+  - `DELETE /api/articles/:id`: Delete an article (Author only)
+
+### Comments
+
+- **Get Comments for an Article**
+  - `GET /api/articles/:id/comments`: Retrieve all comments for an article
+
+- **Add a Comment to an Article**
+  - `POST /api/articles/:id/comments`: Add a new comment (Authenticated users only)
+
+- **Delete a Comment**
+  - `DELETE /api/comments/:id`: Delete a comment (Author only)
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License.
+
